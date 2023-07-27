@@ -2,7 +2,7 @@ import { CardCoffeeSelected } from '@/components/CardCoffeeSelected'
 import { useCartContext } from '@/context/CartProvider'
 import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { HiChevronDown } from 'react-icons/hi2'
+import { ChevronDown } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export function SelectedCoffees() {
@@ -36,7 +36,7 @@ export function SelectedCoffees() {
           </span>
           <span className="flex items-center gap-2 text-sm text-gray-500">
             {isOpenList ? 'Recolher' : 'Exibir'} lista
-            <HiChevronDown
+            <ChevronDown
               className={`transition-transform duration-500 ${
                 isOpenList ? 'rotate-180' : 'rotate-0'
               }`}

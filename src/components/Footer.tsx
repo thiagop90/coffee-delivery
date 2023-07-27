@@ -1,8 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { HiArrowUp } from 'react-icons/hi2'
+import { ArrowUp, Linkedin, Github } from 'lucide-react'
 
 export default function Footer() {
   const handleScrollToTop = () => {
@@ -26,7 +25,7 @@ export default function Footer() {
               target="_blank"
               href="https://github.com/thiagop90"
             >
-              <BsGithub size={20} />
+              <Github size={20} />
             </Link>
             <Link
               title="LinkedIn"
@@ -34,14 +33,14 @@ export default function Footer() {
               target="_blank"
               href="https://linkedin.com/in/psthiago"
             >
-              <BsLinkedin size={20} />
+              <Linkedin size={20} />
             </Link>
             <button
               title="Rolar para o topo"
               onClick={handleScrollToTop}
               className="flex items-center gap-3 rounded-full border border-gray-200 p-2 text-gray-500 hover:bg-gray-100"
             >
-              <HiArrowUp size={20} />
+              <ArrowUp size={20} />
               <span className="text-sm">Rolar para o topo</span>
             </button>
           </div>

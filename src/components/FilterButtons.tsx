@@ -1,7 +1,7 @@
 import { useCoffee } from '@/context/CoffeeProvider'
 import { coffeeData } from '@/data/coffees'
 import { useRef, useEffect } from 'react'
-import { HiX } from 'react-icons/hi'
+import { X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { fadeInRight } from '@/animations/animation'
 
@@ -32,7 +32,7 @@ export function FilterButtons() {
               onClick={() => handleChangeFilter(null)}
               className="h-[2.375rem] rounded-l-full border pl-3 pr-2 text-gray-500 hover:bg-gray-100"
             >
-              <HiX />
+              <X size={16} />
             </button>
           )}
           <button
