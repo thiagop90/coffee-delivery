@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button, input {
+  @apply focus:outline-none
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+  @apply appearance-none m-0
+}
+
+input[type='radio']:checked + label {
+  @apply ring-2 ring-brown-600 border-transparent bg-brown-100 text-brown-600
+}
