@@ -19,23 +19,23 @@ O aplicativo possui as seguintes funcionalidades principais:
 ## Bibliotecas Usadas
 Neste projeto, foram utilizadas diversas bibliotecas para auxiliar no desenvolvimento e aprimorar a experiência do usuário. Abaixo estão as principais bibliotecas utilizadas:
 
-React: Biblioteca JavaScript de código aberto utilizada para construir interfaces de usuário interativas e reativas.
+1. React: Biblioteca JavaScript de código aberto utilizada para construir interfaces de usuário interativas e reativas.
 
-API ViaCEP: API para consultar informações de CEP (Código de Endereçamento Postal) brasileiro, utilizada para obter dados de endereços no projeto.
+2. API ViaCEP: API para consultar informações de CEP (Código de Endereçamento Postal) brasileiro, utilizada para obter dados de endereços no projeto.
 
-Tailwind CSS: Framework CSS altamente customizável, que facilita a criação de interfaces modernas e responsivas.
+3. Tailwind CSS: Framework CSS altamente customizável, que facilita a criação de interfaces modernas e responsivas.
 
-Tailwind Scrollbar: Plugin para Tailwind CSS que possibilita a estilização personalizada de barras de rolagem.
+4. Tailwind Scrollbar: Plugin para Tailwind CSS que possibilita a estilização personalizada de barras de rolagem.
 
-React Hook Form: Biblioteca para gerenciamento de formulários no React, tornando o processo de validação e envio de dados mais simples e eficiente.
+5. React Hook Form: Biblioteca para gerenciamento de formulários no React, tornando o processo de validação e envio de dados mais simples e eficiente.
 
-Zod: Uma biblioteca de esquemas de validação de dados altamente eficiente para JavaScript/TypeScript.
+6. Zod: Uma biblioteca de esquemas de validação de dados altamente eficiente para JavaScript/TypeScript.
 
-Immer: Biblioteca para criar cópias imutáveis de objetos no JavaScript de forma mais intuitiva e concisa.
+7. Immer: Biblioteca para criar cópias imutáveis de objetos no JavaScript de forma mais intuitiva e concisa.
 
-Framer Motion: Biblioteca para animações e transições suaves no React, proporcionando uma experiência visualmente agradável.
+8. Framer Motion: Biblioteca para animações e transições suaves no React, proporcionando uma experiência visualmente agradável.
 
-React Loading Skeleton: Componente React para criar skeletons (estruturas vazias) de carregamento, melhorando a usabilidade enquanto o conteúdo real é carregado.
+9. React Loading Skeleton: Componente React para criar skeletons (estruturas vazias) de carregamento, melhorando a usabilidade enquanto o conteúdo real é carregado.
 
 
 Essas bibliotecas foram escolhidas devido à sua qualidade e funcionalidades que complementam as necessidades específicas do projeto, permitindo o desenvolvimento de um aplicativo eficiente e amigável aos usuários.
