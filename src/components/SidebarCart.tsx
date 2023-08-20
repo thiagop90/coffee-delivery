@@ -7,7 +7,6 @@ import { formatMoney } from '@/utils/formatMoney'
 import { useCartContext } from '@/context/CartProvider'
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { fadeInScale } from '@/animations/animation'
 
 export default function SidebarCart() {
   const router = useRouter()
@@ -50,14 +49,38 @@ export default function SidebarCart() {
         }`}
       >
         <div className="flex h-full w-screen max-w-md flex-col bg-white">
+          <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm backdrop-saturate-180">
+            <div className="flex items-center justify-between border-b border-gray-200 px-6 py-5">
+              <h2 className="text-lg font-medium text-gray-800">
+                Carrinho de compras
+              </h2>
+              <button
+                title="Fechar"
+                className="rounded-full border border-gray-200 bg-white p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-600"
+                onClick={toggleCart}
+              >
+                <X size={16} />
+              </button>
+            </div>
+            <div className="flex items-center justify-between border-b border-gray-200 px-6 py-2 text-sm">
+              <span className="font-medium text-gray-800">
+                {cartQuantity} {cartQuantity > 1 ? 'itens' : 'item'}
+              </span>
+              <button
+                title="Esvaziar carrinho"
+                type="button"
+                className="text-gray-500 underline disabled:cursor-not-allowed disabled:opacity-75"
+                onClick={cleanCart}
+                disabled={cartQuantity === 0}
+              >
+                Esvaziar carrinho
+              </button>
+            </div>
+          </header>
           {cartQuantity === 0 ? (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeInScale}
-              className="flex flex-1 flex-col items-center justify-center px-6"
-            >
+            <div className="flex flex-1 flex-col items-center justify-center px-6">
               <Image src="/empty-cart.svg" width={250} height={250} alt="" />
+
               <div className="mt-6 flex flex-col text-center">
                 <p className="font-medium text-gray-800">
                   Seu carrinho está vazio!
@@ -72,37 +95,10 @@ export default function SidebarCart() {
               >
                 Comece a comprar
               </button>
-            </motion.div>
+            </div>
           ) : (
             <>
               <div className="flex-1 overflow-y-auto">
-                <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm backdrop-saturate-180">
-                  <div className="flex items-center justify-between border-b border-gray-200 px-6 py-5">
-                    <h2 className="text-lg font-medium text-gray-800">
-                      Carrinho de compras
-                    </h2>
-                    <button
-                      title="Fechar"
-                      className="rounded-full border border-gray-200 bg-white p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-600"
-                      onClick={toggleCart}
-                    >
-                      <X size={16} />
-                    </button>
-                  </div>
-                  <div className="flex items-center justify-between border-b border-gray-200 px-6 py-2 text-sm">
-                    <span className="font-medium text-gray-800">
-                      {cartQuantity} {cartQuantity > 1 ? 'itens' : 'item'}
-                    </span>
-                    <button
-                      title="Esvaziar carrinho"
-                      type="button"
-                      className="text-gray-500 underline"
-                      onClick={cleanCart}
-                    >
-                      Esvaziar carrinho
-                    </button>
-                  </div>
-                </div>
                 <ul className="divide-y divide-gray-200 px-6">
                   <AnimatePresence mode="sync">
                     {cartItems.map((item) => (
@@ -130,7 +126,7 @@ export default function SidebarCart() {
                   <button
                     title={pathname !== '/checkout' ? 'Checkout' : 'Fechar'}
                     onClick={() => {
-                      if (pathname === '/') {
+                      if (pathname !== '/checkout') {
                         router.push('/checkout')
                       }
                       toggleCart()
