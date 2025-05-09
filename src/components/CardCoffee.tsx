@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import { InputQuantity } from './InputQuantity'
 import { formatMoney } from '@/utils/formatMoney'
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useCoffee } from '@/context/CoffeeProvider'
 import { Coffee } from '@/data/coffees'
@@ -14,13 +12,8 @@ interface Props {
 }
 
 export function CardCoffee({ coffee }: Props) {
-  const [isLoading, setIsLoading] = useState(true)
   const { favoriteCoffees, toggleFavoriteCoffee } = useCoffee()
   const formattedPrice = formatMoney(coffee.price)
-
-  const handleImageLoad = () => {
-    setIsLoading(false)
-  }
 
   const isFavorite = favoriteCoffees.some(
     (favCoffee) => favCoffee.id === coffee.id,
@@ -44,20 +37,13 @@ export function CardCoffee({ coffee }: Props) {
           </div>
         </div>
         <div className="relative flex flex-1 items-center">
-          <div className="absolute -left-12">
-            <div className="relative h-[7.5rem] w-[7.5rem]">
-              {isLoading && (
-                <div className="absolute inset-0 leading-none">
-                  <Skeleton borderRadius={999} width={120} height={120} />
-                </div>
-              )}
-              <img
-                src={`/coffees/${coffee.photo}`}
-                alt="Coffee cup upper view"
-                width={120}
-                onLoad={handleImageLoad}
-              />
-            </div>
+          <div className="absolute -left-12 h-[7.5rem] w-[7.5rem]">
+            <img
+              src={`/coffees/${coffee.photo}`}
+              alt="Coffee cup upper view"
+              width={120}
+              height={120}
+            />
           </div>
         </div>
         <button
