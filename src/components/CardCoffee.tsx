@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { InputQuantity } from './InputQuantity'
 import { formatMoney } from '@/utils/formatMoney'
 import Skeleton from 'react-loading-skeleton'
@@ -52,12 +51,10 @@ export function CardCoffee({ coffee }: Props) {
                   <Skeleton borderRadius={999} width={120} height={120} />
                 </div>
               )}
-              <Image
+              <img
                 src={`/coffees/${coffee.photo}`}
                 alt="Coffee cup upper view"
                 width={120}
-                height={120}
-                quality={100}
                 onLoad={handleImageLoad}
               />
             </div>

@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { CardCoffeeCart } from './CardCoffeeCart'
 import { formatMoney } from '@/utils/formatMoney'
@@ -79,7 +78,7 @@ export default function SidebarCart() {
           </header>
           {cartQuantity === 0 ? (
             <div className="flex flex-1 flex-col items-center justify-center px-6">
-              <Image src="/empty-cart.svg" width={250} height={250} alt="" />
+              <img src="/empty-cart.svg" width={250} height={250} alt="" />
 
               <div className="mt-6 flex flex-col text-center">
                 <p className="font-medium text-gray-800">

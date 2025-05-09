@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { formatMoney } from '@/utils/formatMoney'
 import { useCartContext } from '@/context/CartProvider'
 import Link from 'next/link'
@@ -46,13 +45,7 @@ export default function Header() {
               : 'flex items-center gap-1'
           }`}
         >
-          <Image
-            src="/coffee-cup.png"
-            alt=""
-            quality={100}
-            width={48}
-            height={48}
-          />
+          <img src="/coffee-cup.png" alt="" width={48} height={48} />
 
           <div
             className={`${

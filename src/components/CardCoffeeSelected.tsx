@@ -2,7 +2,6 @@
 
 import { CartItem } from '@/context/CartProvider'
 import { formatMoney } from '@/utils/formatMoney'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
@@ -36,7 +35,7 @@ export function CardCoffeeSelected({ coffee }: Props) {
               <Skeleton borderRadius={999} width="100%" height="100%" />
             </div>
           )}
-          <Image
+          <img
             src={`/coffees/${coffee.photo}`}
             alt=""
             width={80}

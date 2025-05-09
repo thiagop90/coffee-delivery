@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { InfoWithIcon } from '@/components/InfoWithIcon'
 import { CoffeeList } from '@/components/CoffeeList'
 
@@ -85,7 +84,7 @@ export default function Home() {
               }}
               className="hidden aspect-square rounded-full md:items-center lg:flex"
             >
-              <Image
+              <img
                 src="/coffee-friends.svg"
                 alt="Coffee cup upper view"
                 width={350}

@@ -3,7 +3,6 @@
 import { InputQuantity } from '@/components/InputQuantity'
 import { CartItem } from '@/context/CartProvider'
 import { formatMoney } from '@/utils/formatMoney'
-import Image from 'next/image'
 import { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -32,7 +31,7 @@ export function CardCoffeeCart({ coffee }: Props) {
                 <Skeleton borderRadius={999} width={80} height={80} />
               </div>
             )}
-            <Image
+            <img
               src={`/coffees/${coffee.photo}`}
               alt=""
               width={80}
